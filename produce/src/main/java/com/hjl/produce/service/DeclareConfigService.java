@@ -1,16 +1,14 @@
-package com.hjl.produce.mapper;
+package com.hjl.produce.service;
 
 import com.hjl.produce.dao.DeclareConfig;
 
 import java.util.List;
 
 /**
- * Created   on 2018/10/8.
+ * Created   on 2018/10/13.
  *
  * @author hjl
  */
-public interface DeclareConfigMapper {
-
+public interface DeclareConfigService {
     List<DeclareConfig> selectAllDeclareConfig();
-
 }

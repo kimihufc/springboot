@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hjl.produce.mapper.DeclareConfigMapper" >
+  <resultMap id="BaseResultMap" type="com.hjl.produce.dao.DeclareConfig" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="area_id" jdbcType="VARCHAR" property="areaId" />
+    <result column="area_name" jdbcType="VARCHAR" property="areaName" />
+    <result column="support_tax_check" jdbcType="INTEGER" property="supportTaxCheck" />
+    <result column="support_undo_sb" jdbcType="INTEGER" property="supportUndoSb" />
+    <result column="tax_check_start_day" jdbcType="INTEGER" property="taxCheckStartDay" />
+    <result column="tax_check_end_day" jdbcType="INTEGER" property="taxCheckEndDay" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, area_id, area_name, support_tax_check,support_undo_sb,tax_check_start_day,tax_check_end_day
+  </sql>
+  <select id="selectAllDeclareConfig" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from sys_area_info_config
+  </select>
+</mapper>

@@ -1,9 +1,14 @@
 package com.hjl.produce.controller;
 
+import com.hjl.produce.dao.DeclareConfig;
+import com.hjl.produce.service.DeclareConfigService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.retry.annotation.Recover;
 import org.springframework.retry.annotation.Retryable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * Created   on 2018/9/14.
@@ -12,6 +17,22 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class SpringRetry {
+
+    @Autowired
+    private DeclareConfigService declareConfigService;
+
+    @GetMapping("hello")
+    public String hello(){
+        try{
+            List<DeclareConfig> configList = declareConfigService.selectAllDeclareConfig();
+            for (DeclareConfig config : configList) {
+                System.out.println(config);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return "success";
+    }
 
     int i = 1;
 
