@@ -3,6 +3,7 @@ package com.hjl.produce.controller;
 import com.hjl.produce.dao.DeclareConfig;
 import com.hjl.produce.service.DeclareConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.retry.annotation.Recover;
 import org.springframework.retry.annotation.Retryable;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,8 +19,20 @@ import java.util.List;
 @RestController
 public class SpringRetry {
 
+
+    @Autowired
+    StringRedisTemplate redisTemplate;
+
     @Autowired
     private DeclareConfigService declareConfigService;
+
+    @GetMapping("testredis")
+    public String testredis(){
+        System.out.println("------------------");
+        redisTemplate.opsForValue().set("hello","hello");
+        System.out.println(redisTemplate.opsForValue().get("hello"));
+        return "success";
+    }
 
     @GetMapping("hello")
     public String hello(){
