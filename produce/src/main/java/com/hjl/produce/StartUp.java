@@ -20,6 +20,7 @@ public class StartUp {
         SpringApplication application = new SpringApplication(StartUp.class);
         application.addInitializers(new ContextInit3());
         application.run(args);
+
     }
 
 }

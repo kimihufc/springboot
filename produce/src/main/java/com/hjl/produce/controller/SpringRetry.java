@@ -1,5 +1,6 @@
 package com.hjl.produce.controller;
 
+import com.hjl.produce.config.TestConfig;
 import com.hjl.produce.dao.DeclareConfig;
 import com.hjl.produce.service.DeclareConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +27,12 @@ public class SpringRetry {
     @Autowired
     private DeclareConfigService declareConfigService;
 
+    @Autowired
+    private TestConfig testConfig;
+
     @GetMapping("testredis")
     public String testredis(){
-        System.out.println("------------------");
+        System.out.println("------------------"+testConfig.getName());
         redisTemplate.opsForValue().set("hello","hello");
         System.out.println(redisTemplate.opsForValue().get("hello"));
         return "success";
