@@ -1,6 +1,7 @@
 package com.hjl.produce;
 
 import com.hjl.produce.contextinit.ContextInit3;
+import com.hjl.produce.listener.TestListen;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -25,6 +26,7 @@ public class StartUp {
     public static void main(String[] args) {
         SpringApplication application = new SpringApplication(StartUp.class);
         application.addInitializers(new ContextInit3());
+        application.addListeners(new TestListen());
         application.run(args);
         Resource resource = new ClassPathResource("test.properties");
         Properties properties = null;
