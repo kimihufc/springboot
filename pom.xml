@@ -13,6 +13,7 @@
     <module>produce</module>
     <module>comsume</module>
     <module>facade</module>
+      <module>bootlearn</module>
   </modules>
   <packaging>pom</packaging>
   <name>springboot</name>
