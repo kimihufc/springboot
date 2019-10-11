@@ -1,0 +1,4 @@
+group=com.hjl.activate.GroupExt
+order1=com.hjl.activate.OrderOneExt
+order2=com.hjl.activate.OrderTwoExt
+com.hjl.activate.DefaultExt
