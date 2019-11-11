@@ -15,6 +15,7 @@
     <module>facade</module>
       <module>bootlearn</module>
       <module>dubbodemo</module>
+      <module>redissearch</module>
   </modules>
   <packaging>pom</packaging>
   <name>springboot</name>
