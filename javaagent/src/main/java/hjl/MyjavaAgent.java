@@ -16,5 +16,6 @@ public class MyjavaAgent {
         for (Class loadedClass : loadedClasses) {
             System.out.println("myagent:"+loadedClass.toString());
         }
+        inst.addTransformer(new TimeClassFileTransformer());
     }
 }
