@@ -16,6 +16,7 @@
       <module>bootlearn</module>
       <module>dubbodemo</module>
       <module>redissearch</module>
+      <module>javaagent</module>
   </modules>
   <packaging>pom</packaging>
   <name>springboot</name>
