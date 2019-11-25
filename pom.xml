@@ -17,6 +17,7 @@
       <module>dubbodemo</module>
       <module>redissearch</module>
       <module>javaagent</module>
+      <module>kubernetes</module>
   </modules>
   <packaging>pom</packaging>
   <name>springboot</name>

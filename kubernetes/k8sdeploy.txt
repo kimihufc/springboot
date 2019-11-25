@@ -1,0 +1,24 @@
+部署应用
+第一 配置编排文件(例子 nginx)
+apiVersion: v1      # 描述文件所遵循KubernetesAPI的版本
+kind: Pod           # 描述的类型是pod
+metadata:
+  name: nginx-pod   # pod的名称
+  labels:           # 标签
+    app: nginx-pod
+    env: test
+spec:
+  containers:
+    - name: nginx-pod     # 容器名
+      image: nginx:1.15   # 镜像名称及版本
+      imagePullPolicy: IfNotPresent   # 如果本地不存在就去远程仓库拉取
+      ports:
+        - containerPort: 80   # pod对外端口
+  restartPolicy: Always
+第二
+kubectl apply -f nginx.yaml
+kubectl get pods 查询pod状态
+(删除)
+kubectl delete -f nginx-pod.yaml
+查询状态
+kubectl describe pod tasktrack-pod
