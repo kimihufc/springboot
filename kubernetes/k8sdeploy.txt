@@ -22,3 +22,6 @@ kubectl get pods 查询pod状态
 kubectl delete -f nginx-pod.yaml
 查询状态
 kubectl describe pod tasktrack-pod
+
+//开发端口
+kubectl port-forward --address 0.0.0.0 tasktrack-pod 8201:8201
