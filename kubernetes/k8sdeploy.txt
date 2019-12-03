@@ -25,3 +25,6 @@ kubectl describe pod tasktrack-pod
 
 //开发端口
 kubectl port-forward --address 0.0.0.0 tasktrack-pod 8201:8201
+
+//进入容器
+kubectl exec -it tasktrack-pod -- /bin/bash
